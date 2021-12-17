@@ -17,6 +17,8 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -27,21 +29,20 @@
               src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
               alt="clear"
             />
-            <span class="current-degree">
+            <span class="current-degree" id="temperature">
             4</span> <span class="degree-signs"> ℃|℉ </span>
 
-            <ul class="details-current-condition">
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 53%</li>
-              <li>Wind: 0 km/h</li>
+            <ul class="details-current-condition">           
+              <li>Humidity: <span id="humidity"> 53</span>%</li>
+              <li>Wind: <span id="wind"> 0</span> km/h</li>
             </ul>
           </div>
           <div class="col-6">
                 <ul class="current-condition">
-                    <li class="city">Tehran, Tehran Province </li>
+                    <li class="city"> <span id="cityName"> Tehran </span>, <span id="country"></span> </li>
               <li>Friday 00:00
 </li>
-              <li>Clear</li>
+              <li id="description">Clear</li>
             </ul>
           </div>
         </div>
