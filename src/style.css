@@ -54,7 +54,7 @@ small {
 }
 .degree-signs {
   color: rgb(32, 33, 36);
-  display: inline-block;
+  display: inline;
   font-family: arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -86,4 +86,13 @@ small {
   line-height: 16px;
   text-align: center;
   white-space: nowrap;
+}
+.active {
+  color: rgb(32, 33, 36);
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: rgb(32, 33, 36);
 }

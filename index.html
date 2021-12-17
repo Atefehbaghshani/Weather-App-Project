@@ -23,7 +23,6 @@
   <body>
     <div class="container">
       <div class="weather-app">
-
         <form id="search-form" class="mb-3">
           <div class="row">
          <div class="col-9">
@@ -41,7 +40,10 @@
               alt="clear" id="icon"
             />
             <span class="current-degree" id="temperature">
-            4</span> <span class="degree-signs"> ℃|℉ </span>
+            4</span> 
+            <span class="degree-signs"> 
+             <a href="#" id="centigrade" class="active">℃</a> | <a href="#" id="fahrenheit" >℉</a>
+             </span>
 
             <ul class="details-current-condition">           
               <li>Humidity: <span id="humidity"> 53</span>%</li>

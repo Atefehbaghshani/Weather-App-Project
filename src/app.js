@@ -21,7 +21,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayTemperature(response) {
-  console.log(response.data);
+  // console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   // let precipitationElement = document.querySelector("#precipitation");
   let humidityElement = document.querySelector("#humidity");
@@ -31,7 +31,8 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let dateElemet = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  centigradeTemp = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = centigradeTemp;
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
   cityNameElement.innerHTML = response.data.name;
@@ -54,5 +55,28 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#cityInput");
   search(cityInputElement.value);
 }
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((centigradeTemp * 9) / 5 + 32);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = fahrenheitTemp;
+  centigradeLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+function displayCentigrade(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = centigradeTemp;
+  fahrenheitLink.classList.remove("active");
+  centigradeLink.classList.add("active");
+}
+
+let centigradeTemp = null;
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+let centigradeLink = document.querySelector("#centigrade");
+centigradeLink.addEventListener("click", displayCentigrade);
+search("Paris");
