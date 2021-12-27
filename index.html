@@ -18,105 +18,60 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
         <form id="search-form" class="mb-3">
           <div class="row">
-         <div class="col-9">
-            <input type="search" placeholder="Type a city..." class="form-control" id="cityInput" autocomplete="off"/>
-        </div>
-      <div class="col-3">
-        <input type="submit" value="Search" class="btn btn-primary w-100" />
-      </div>
-    </div>
-    </form>
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a city..."
+                class="form-control"
+                id="cityInput"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-100"
+              />
+            </div>
+          </div>
+        </form>
         <div class="row">
           <div class="col-6">
-            <img class="current-image"
+            <img
+              class="current-image"
               src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-              alt="clear" id="icon"
+              alt="clear"
+              id="icon"
             />
-            <span class="current-degree" id="temperature">
-            4</span> 
-            <span class="degree-signs"> 
-             <a href="#" id="centigrade" class="active">℃</a> | <a href="#" id="fahrenheit" >℉</a>
-             </span>
+            <span class="current-degree" id="temperature"> 4</span>
+            <span class="degree-signs">
+              <a href="#" id="centigrade" class="active">℃</a> |
+              <a href="#" id="fahrenheit">℉</a>
+            </span>
 
-            <ul class="details-current-condition">           
+            <ul class="details-current-condition">
               <li>Humidity: <span id="humidity"> 53</span>%</li>
               <li>Wind: <span id="wind"> 0</span> km/h</li>
             </ul>
           </div>
           <div class="col-6">
-                <ul class="current-condition">
-                    <li class="city"> <span id="cityName"> Tehran </span>, <span id="country"></span> </li>
+            <ul class="current-condition">
+              <li class="city">
+                <span id="cityName"> Tehran </span>, <span id="country"></span>
+              </li>
               <li id="date"></li>
               <li id="description">Clear</li>
             </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-2 forecast">
-            <ul>
-              <li>Fri</li>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                  alt="cloudy"
-                />
-              </li>
-              <li><strong>11°</strong> 6°</li>
-            </ul>
-          </div>
-          <div class="col-2 forecast"><ul>
-              <li>Fri</li>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                  alt="cloudy"
-                />
-              </li>
-              <li><strong>11°</strong> 6°</li></div>
-          <div class="col-2 forecast"><ul>
-              <li>Fri</li>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                  alt="cloudy"
-                />
-              </li>
-              <li><strong>11°</strong> 6°</li></div>
-          <div class="col-2 forecast"><ul>
-              <li>Fri</li>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                  alt="cloudy"
-                />
-              </li>
-              <li><strong>11°</strong> 6°</li></div>
-          <div class="col-2 forecast"><ul>
-              <li>Fri</li>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                  alt="cloudy"
-                />
-              </li>
-              <li><strong>11°</strong> 6°</li></div>
-          <div class="col-2 forecast"><ul>
-              <li>Fri</li>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                  alt="cloudy"
-                />
-              </li>
-              <li><strong>11°</strong> 6°</li></div>
-        </div>
+        <div id="forecast">Forecast</div>
       </div>
       <small>
         Coded by
