@@ -7,6 +7,7 @@ li {
   margin: 0;
   padding: 0;
   text-transform: capitalize;
+  display: block;
 }
 small {
   display: block;
@@ -79,7 +80,7 @@ small {
 .forecast {
   color: rgb(32, 33, 36);
   cursor: pointer;
-  display: inline;
+
   font-family: arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -95,4 +96,9 @@ small {
 .active:hover {
   text-decoration: none;
   color: rgb(32, 33, 36);
+}
+.icon {
+  display: block;
+  margin: 0 auto;
+  max-width: 120%;
 }

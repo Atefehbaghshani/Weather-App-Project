@@ -44,10 +44,9 @@ function displayForecast(response) {
     <div class="col-2 forecast">
      <ul>
       <li>${formatForecastDay(forecastDay.dt)}</li>
-      <li> <img src='https://openweathermap.org/img/wn/${
+      <li> <img class="icon" src= https://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
-      }@2x.png' 
-                alt="cloudy"/>
+      }@2x.png alt="cloudy"/>
       </li>  
       <li> <strong>${Math.round(forecastDay.temp.max)}°</strong> ${Math.round(
         forecastDay.temp.min
